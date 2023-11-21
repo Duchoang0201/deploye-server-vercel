@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "name": "Pierre Cardin",
+    "email": "info@pierre-cardin.vn",
+    "phoneNumber": "0888560606",
+    "address": "534 Lê Văn Sĩ , Phường 14 , Quận 3 , TP.HCM"
+  },
+  {
+    "id": 2,
+    "name": "Anphuoc",
+    "email": "cskh@anphuoc.com.vn",
+    "phoneNumber": "02838350058",
+    "address": "100/11-12 An Dương Vương, P.9, Q.5, TP. Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 3,
+    "name": "Adam Store",
+    "email": "info@adamgroup.vn",
+    "phoneNumber": "0938888835",
+    "address": "9 Đ. Thanh Niên, Quán Thánh, Ba Đình, Hà Nội"
+  },
+  {
+    "id": 4,
+    "name": "Merri Man",
+    "email": "merrimanfashion@hoatho.com.vn",
+    "phoneNumber": "0888560606",
+    "address": "36 Ông Ích Đường, phường Hòa Thọ Đông, quận Cẩm Lệ, thành phố Đà Nẵng"
+  },
+  {
+    "id": 5,
+    "name": "Yody",
+    "email": "chamsockhachhang@yody.vn",
+    "phoneNumber": "02499986999",
+    "address": "Đường An Định - Phường Việt Hòa - Thành phố Hải Dương - Hải Dương"
+  },
+  {
+    "name": "HOANG",
+    "email": "iphone14@gmail.com",
+    "address": "123 Main St",
+    "id": 6
+  },
+  {
+    "name": "Nguyễn Bá Đức Phúc",
+    "email": "Duchoang020120@gmail.com",
+    "phoneNumber": "0913599444",
+    "address": "Khóm 2, TT Krông Klang, Đakrông, Quảng Trị",
+    "id": 7
+  },
+  {
+    "name": "Nguyễn Thị Như Quỳnh",
+    "email": "Duchoang020120@gmail.com",
+    "phoneNumber": "0913599444",
+    "address": "Khóm 2, TT Krông Klang, Đakrông, Quảng Trị",
+    "id": 8
+  },
+  {
+    "name": "Nguyễn Thị Như Quỳnh",
+    "email": "himquyn18@gmail.com",
+    "phoneNumber": "0827033595",
+    "address": "Khóm 2, TT Krông Klang, Đakrông, Quảng Trị",
+    "id": 9
+  }
+]

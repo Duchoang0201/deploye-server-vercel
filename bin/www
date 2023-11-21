@@ -1,0 +1,146 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require("../app");
+var debug = require("debug")("backend-express:server");
+var http = require("http");
+const socketIO = require("socket.io");
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || "9000");
+app.set("port", port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+
+// const io = socketIO(server);
+
+// var server = http.createServer(app);
+// const io = socketIO(server, {
+//   cors: {
+//     origin: process.env.WEB_ADMIN_URL || "http://localhost:3000",
+//     methods: ["GET", "POST"],
+//   },
+// });
+
+var server = http.createServer(app);
+const io = socketIO(server, {
+  cors: {
+    origin: true,
+    credentials: true,
+  },
+});
+const { Message } = require("../models");
+
+io.on("connection", (socket) => {
+  socket.on("client-message", async (data) => {
+    socket.join(data.conversationId);
+
+    if (data.type === "chat") {
+      const dataMessage = {
+        employee: data.employee,
+        text: data.text,
+        sender: data.sender,
+        conversationId: data.conversationId,
+        createdAt: data.createdAt,
+        updatedAt: data.updatedAt,
+      };
+
+      let newMessage = new Message(dataMessage);
+      try {
+        const newData = await newMessage.save();
+        if (newData._id) {
+          newData.employee = data.employee;
+
+          console.log("««««« newData »»»»»", newData);
+          io.to(data.room).emit("direct-message", {
+            newData,
+          });
+        }
+      } catch (err) {
+        console.log("««««« err »»»»»", err);
+      }
+    } else if (data.type === "join") {
+      io.to(data.room).emit("server-message", {
+        message: `join room ${data.room} ok`,
+      });
+    }
+  });
+
+  socket.on("disconnect", () => {
+    console.log("User disconnected");
+  });
+});
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port);
+server.on("error", onError);
+server.on("listening", onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== "listen") {
+    throw error;
+  }
+
+  var bind = typeof port === "string" ? "Pipe " + port : "Port " + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case "EACCES":
+      console.error(bind + " requires elevated privileges");
+      process.exit(1);
+      break;
+    case "EADDRINUSE":
+      console.error(bind + " is already in use");
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
+  debug("Listening on " + bind);
+}

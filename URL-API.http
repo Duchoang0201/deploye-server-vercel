@@ -1,0 +1,179 @@
+
+# GET http://localhost:9000/questions/641b0dfdb5b1ca7f1713e8e6 HTTP/1.1
+# content-type: application/json
+
+
+// 1. Hiển thị tất cả các mặt hàng có giảm giá <= 10%
+
+# GET http://localhost:9000/questions/question/1?discount=10 HTTP/1.1
+# content-type: application/json
+
+// 1b. Hiển thị tất cả các mặt hàng có giảm giá <= 10%,
+#  và chi tiết danh mục, nhà cung cấp
+
+# GET http://localhost:9000/questions/question/1b?discount=3 HTTP/1.1
+# content-type: application/json
+
+
+// 2. Hiển thị tất cả các mặt hàng có tồn kho <= 5 
+
+# GET http://localhost:9000/questions/2?stock=100 HTTP/1.1
+# content-type: application/json
+
+// 3. Hiển thị tất cả các mặt hàng có 
+//Giá bán sau khi đã giảm giá <= 100.000
+
+# GET http://localhost:9000/questions/3?price=100 HTTP/1.1
+# content-type: application/json
+
+// 4. Hiển thị tất cả các khách hàng có địa chỉ ở Quận ..
+
+# GET http://localhost:9000/questions/4?address=Extension HTTP/1.1
+# content-type: application/json
+
+
+// 5. Hiển thị tất cả các khách hàng có năm sinh 1990
+
+# GET http://localhost:9000/questions/5?year=2000 HTTP/1.1
+# content-type: application/json
+
+
+// 6. Hiển thị tất cả các khách hàng có sinh nhật là ngày...
+
+# GET http://localhost:9000/questions/6?date=2190-08-15 HTTP/1.1
+# content-type: application/json
+
+// 7. Hiển thị tất cả các đơn hàng có trạng thái là ...
+
+# GET http://localhost:9000/questions/7?status=CANCLE HTTP/1.1
+# content-type: application/json
+
+// 8. Hiển thị tất cả các đơn hàng có trạng thái là <status> có ngày tạo trong khoảng <fromDate> và <toDate>
+
+# GET http://localhost:9000/questions/8?status=WAITING&fromDate=2023-03-22&toDate=2023-03-22 HTTP/1.1
+# content-type: application/json
+
+
+// 13. Hiển thị tất cả các đơn hàng có địa chỉ giao hàng là Hà Nội
+
+
+# GET http://localhost:9000/questions/13?address=Freeway HTTP/1.1
+# content-type: application/json
+
+// 14. Hiển thị tất cả các nhân viên có sinh nhật là hôm nay
+
+# GET http://localhost:9000/questions/14?kind=Customer&birthday=2023-08-15 HTTP/1.1
+# content-type: application/json
+
+
+// 15 Hiển thị tất cả các nhân viên có sinh nhật là hôm nay
+
+# GET http://localhost:9000/questions/15?supplierNames=Anphuoc&supplierNames=Yody HTTP/1.1
+# content-type: application/json
+
+// 16. Hiển thị tất cả các đơn hàng cùng với thông tin chi tiết khách hàng (Customer)
+
+# GET http://localhost:9000/questions/16 HTTP/1.1
+# content-type: application/json
+
+
+// 17. Hiển thị tất cả các mặt hàng cùng với thông tin chi tiết của Category và Supplier
+
+# GET http://localhost:9000/questions/17 HTTP/1.1
+# content-type: application/json
+
+// 18. Hiển thị tất cả danh mục (Categories) với số lượng hàng hóa trong mỗi danh mục																					
+
+# GET http://localhost:9000/questions/18 HTTP/1.1
+# content-type: application/json
+
+
+// 19. Hiển thị tất cả nhà cung cấp (Suppliers) với số lượng hàng hóa mỗi nhà cung cấp
+																		
+# GET http://localhost:9000/questions/19 HTTP/1.1
+# content-type: application/json
+
+
+// 20. Hiển thị tất cả các mặt hàng được bán trong khoảng từ ngày, đến ngày
+																	
+# GET http://localhost:9000/questions/20?fromDate=2023-03-29&toDate=2023-03-30 HTTP/1.1
+# content-type: application/json
+
+// 21. Hiển thị tất cả các khách hàng mua hàng trong khoảng từ ngày, đến ngày
+
+																	
+# GET http://localhost:9000/questions/21?fromDate=2023-03-22&toDate=2023-03-23 HTTP/1.1
+# content-type: application/json
+
+// 22.Hiển thị tất cả các khách hàng mua hàng (với tổng số tiền) trong khoảng từ ngày, đến ngày																								
+
+# GET http://localhost:9000/questions/22?fromDate=2023-03-29&toDate=2023-03-30 HTTP/1.1
+# content-type: application/json
+
+// 23.Hiển thị tất cả đơn hàng với tổng số tiền
+																								
+
+# GET http://localhost:9000/questions/23 HTTP/1.1
+# content-type: application/json
+
+// 24.Hiển thị tất cả nhân viên với tổng số tiền bán được
+																								
+
+# GET http://localhost:9000/questions/24 HTTP/1.1
+# content-type: application/json
+
+// 25.Hiển thị tất cả các mặt hàng không bán được
+
+																							
+# GET http://localhost:9000/questions/25?fromDate=2023-03-29&toDate=2023-03-30  HTTP/1.1
+# content-type: application/json
+
+
+// 26.Hiển thị tất cả các nhà cung cấp không bán được trong khoảng từ ngày, đến ngày
+
+																							
+# GET http://localhost:9000/questions/26?fromDate=2023-03-29&toDate=2023-03-30  HTTP/1.1
+# content-type: application/json
+
+// 26b.Hiển thị tất cả các nhà cung cấp bán được trong khoảng từ ngày, đến ngày
+
+																							
+# GET http://localhost:9000/questions/26b?fromDate=2023-03-29&toDate=2023-03-30  HTTP/1.1
+# content-type: application/json
+
+// 27.Hiển thị top 3 các nhân viên bán hàng với tổng số tiền bán được từ cao đến thấp trong khoảng từ ngày, đến ngày
+
+
+// 27.Hiển thị danh sách các mức giảm giá của cửa hàng
+
+
+# GET http://localhost:9000/questions/29?fromDate=2023-03-03&toDate=2023-03-31  HTTP/1.1
+# content-type: application/json
+
+
+ // 30. Hiển thị tất cả danh mục (Categories) với tổng số tiền bán được trong mỗi danh mục
+
+ // 30a. Hiển thị tất cả danh mục (Categories) với tổng số tiền bán được trong mỗi danh mục ( chỉ xuất hiện danh mục bán được )
+
+
+GET http://localhost:9000/questions/30a  HTTP/1.1
+content-type: application/json						
+
+
+# GET http://localhost:9000/questions/27?fromDate=2023-01-01&toDate=2023-03-31  HTTP/1.1
+# content-type: application/json
+
+
+// 33.Hiển thị top 3 các nhân viên bán hàng với tổng số tiền bán được từ cao đến thấp trong khoảng từ ngày, đến ngày
+
+
+																							
+# GET http://localhost:9000/questions/33?fromDate=2023-03-03&toDate=2023-03-31  HTTP/1.1
+# content-type: application/json
+
+// 34. Hiển thị trung bình cộng giá trị các đơn hàng trong khoảng từ ngày, đến ngày
+
+
+																							
+# GET http://localhost:9000/questions/34?fromDate=2023-03-03&toDate=2023-03-31  HTTP/1.1
+# content-type: application/json

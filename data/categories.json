@@ -1,0 +1,12 @@
+[
+  { "name": "Men's clothing", "description": "Men's item", "id": 1 },
+  { "name": "Women's clothing", "description": "Women's item", "id": 2 },
+  {
+    "name": "Jewelery",
+    "description": "Decorative objects worn on your clothes",
+    "id": 3
+  },
+  { "name": "Electronics", "description": "Electronics item ", "id": 4 },
+  { "name": "asdasd", "description": "asd", "id": 5 },
+  { "name": "Toys", "description": "Đồ chơi", "id": 6 }
+]
